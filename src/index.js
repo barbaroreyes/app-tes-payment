@@ -2,12 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {PrendaProvider} from './context/prendas'
+import {CartProvider} from './context/cart'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <PrendaProvider>
+  <CartProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </CartProvider>
+</PrendaProvider>,
   document.getElementById('root')
 );
 
